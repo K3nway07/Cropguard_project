@@ -1,16 +1,41 @@
 import { useState } from 'react'
 import './Nodes.css'
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer
+} from 'recharts'
 
 function Nodes() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [history, setHistory] = useState([])
 
   const fetchData = () => {
     setLoading(true)
-    fetch('https://api.thingspeak.com/channels/2815838/feeds.json?api_key=HZG7NZSB5KMN3AK8&results=2')
+    fetch('https://api.thingspeak.com/channels/2815838/feeds.json?api_key=HZG7NZSB5KMN3AK8&results=1')
       .then(res => res.json())
       .then(json => {
-        setData(json.feeds[0])
+        const newData = json.feeds[0]
+        setData(newData)
+
+        setHistory(prev => [
+          ...prev,
+          {
+            timestamp: new Date(newData.created_at).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true }),
+            temp1: parseFloat(newData.field1),
+            hum1: parseFloat(newData.field2),
+            soil1: parseFloat(newData.field3),
+            temp2: parseFloat(newData.field4),
+            hum2: parseFloat(newData.field5),
+            soil2: newData.field6 ? parseFloat(newData.field6) : null
+          }
+        ])
+
         setLoading(false)
       })
       .catch(err => {
@@ -21,11 +46,7 @@ function Nodes() {
 
   const formatDate = (isoString) => {
     const date = new Date(isoString)
-    const options = {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-    }
+    const options = { hour: '2-digit', minute: '2-digit', hour12: true }
     const time = date.toLocaleTimeString('en-IN', options)
     const day = date.getDate().toString().padStart(2, '0')
     const month = (date.getMonth() + 1).toString().padStart(2, '0')
@@ -52,6 +73,21 @@ function Nodes() {
                 <li>Location: MSIT, Ruby, Kolkata</li>
               </ul>
               <p className="timestamp">{formatDate(data.created_at)}</p>
+
+              <div className="chart-wrapper">
+                <h4>Node 1 Data Graph</h4>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={history}>
+                    <CartesianGrid stroke="#ccc" />
+                    <XAxis dataKey="timestamp" />
+                    <YAxis />
+                    <Tooltip />
+                    <Line type="monotone" dataKey="temp1" stroke="#f87171" name="Temp (°C)" />
+                    <Line type="monotone" dataKey="hum1" stroke="#60a5fa" name="Humidity (%)" />
+                    <Line type="monotone" dataKey="soil1" stroke="#34d399" name="Soil (%)" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </>
           ) : (
             <p>{loading ? 'Loading...' : 'Click button to fetch Node 1 data'}</p>
@@ -69,6 +105,23 @@ function Nodes() {
                 <li>Location: MSIT, Ruby, Kolkata</li>
               </ul>
               <p className="timestamp">{formatDate(data.created_at)}</p>
+
+              <div className="chart-wrapper">
+                <h4>Node 2 Data Graph</h4>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={history}>
+                    <CartesianGrid stroke="#ccc" />
+                    <XAxis dataKey="timestamp" />
+                    <YAxis />
+                    <Tooltip />
+                    <Line type="monotone" dataKey="temp2" stroke="#facc15" name="Temp (°C)" />
+                    <Line type="monotone" dataKey="hum2" stroke="#818cf8" name="Humidity (%)" />
+                    {history.some(d => d.soil2 !== null) && (
+                      <Line type="monotone" dataKey="soil2" stroke="#a78bfa" name="Soil (%)" />
+                    )}
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </>
           ) : (
             <p>{loading ? 'Loading...' : 'Click button to fetch Node 2 data'}</p>

@@ -1,29 +1,27 @@
-/* Nodes.css - reversed colors with label-value pairs */
+/* Nodes.css - Enhanced for graph clarity and layout */
 .nodes-container {
-  background: linear-gradient(to bottom right, #d1fae5, #a7f3d0); /* light green background */
+  background: linear-gradient(to bottom right, #d1fae5, #a7f3d0);
   padding: 20px;
   min-height: 89.7vh;
   box-sizing: border-box;
 
-  /* Center horizontally & vertically */
   display: flex;
   flex-direction: column;
   gap: 30px;
   justify-content: flex-start;
-  align-items: center;     /* horizontal center */
+  align-items: center;
 
-  color: #1e4620; /* dark green text */
+  color: #1e4620;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center; /* center text inside */
-  overflow-x: hidden;          /* prevent horizontal scroll */
-  overflow-y: auto;  
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-
 .fetch-button {
-  background-color: #065f46; /* medium light green */
+  background-color: #065f46;
   border: none;
-  color: white; /* dark green text */
+  color: white;
   padding: 10px 20px;
   cursor: pointer;
   font-weight: 600;
@@ -40,13 +38,14 @@
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .node-card {
-  background-color: #ffffff; /* white box for contrast */
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  width: 280px;
+  width: 350px; /* Wider for better chart fit */
   box-sizing: border-box;
   color: #1e4620;
   display: flex;
@@ -59,7 +58,6 @@
   margin: 0 0 15px 0;
   font-weight: 700;
   font-size: 1.4rem;
-  text-align: center;
   color: #1e4620;
 }
 
@@ -71,11 +69,11 @@
 }
 
 .node-card ul li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-size: 1.1rem;
   display: flex;
-  justify-content: space-between; /* label left, value right */
-  border-bottom: 1px solid #04ba87; /* subtle underline */
+  justify-content: space-between;
+  border-bottom: 1px solid #04ba87;
   padding-bottom: 4px;
   color: #1e4620;
 }
@@ -88,8 +86,21 @@
 
 .timestamp {
   margin-top: 15px;
-  font-size: 1.0rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: #065f46; /* darker green */
+  color: #065f46;
   text-align: center;
+}
+
+/* Graph section */
+.chart-wrapper {
+  margin-top: 25px;
+  width: 100%;
+  height: 350px;
+}
+
+.chart-wrapper h4 {
+  color: #1e4620;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
