@@ -1,30 +1,33 @@
 /* Nodes.css - reversed colors with label-value pairs */
 .nodes-container {
-  background-color: #d4f5c6; /* light green background */
+  background: linear-gradient(to bottom right, #d1fae5, #a7f3d0); /* light green background */
   padding: 20px;
-  min-height: 100vh;
+  min-height: 89.7vh;
+  box-sizing: border-box;
 
   /* Center horizontally & vertically */
   display: flex;
   flex-direction: column;
   gap: 30px;
-  /* justify-content: center; vertical center */
+  justify-content: flex-start;
   align-items: center;     /* horizontal center */
 
   color: #1e4620; /* dark green text */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center; /* center text inside */
+  overflow-x: hidden;          /* prevent horizontal scroll */
+  overflow-y: auto;  
 }
 
 
 .fetch-button {
-  background-color: #a1e888; /* medium light green */
+  background-color: #065f46; /* medium light green */
   border: none;
-  color: #1e4620; /* dark green text */
+  color: white; /* dark green text */
   padding: 10px 20px;
   cursor: pointer;
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 30px;
   margin-bottom: 20px;
   transition: background-color 0.3s ease;
 }
@@ -72,7 +75,7 @@
   font-size: 1.1rem;
   display: flex;
   justify-content: space-between; /* label left, value right */
-  border-bottom: 1px solid #a1e888; /* subtle underline */
+  border-bottom: 1px solid #04ba87; /* subtle underline */
   padding-bottom: 4px;
   color: #1e4620;
 }
@@ -85,8 +88,8 @@
 
 .timestamp {
   margin-top: 15px;
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   font-weight: 500;
-  color: #4f774f; /* darker green */
+  color: #065f46; /* darker green */
   text-align: center;
 }
