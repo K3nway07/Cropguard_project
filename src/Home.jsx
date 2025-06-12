@@ -1,38 +1,51 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaLeaf, FaBroadcastTower, FaShieldAlt } from "react-icons/fa";
-import "./Home.css"; // Import custom CSS
+import "./Home.css";
+import heroImage from "./assets/image1.jpg"; // Still used in content
+import previewVideo from "./assets/preview1.mp4"; // Background video
 
 const Home = () => {
   return (
     <div className="home-container">
-      <div className="home-box">
-        <div className="logo-section">
-          <FaLeaf className="logo-icon" />
-          <h1 className="title">CropGuard</h1>
-        </div>
+      {/* 🔁 Background Video */}
+      <video
+        className="background-video"
+        src={previewVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
-        <p className="description">
-          A smart agricultural surveillance system powered by LoRa technology to monitor crop conditions in real-time and prevent damage.
-        </p>
+      {/* Overlay content */}
+      <div className="overlay">
+        <div className="home-content">
+          <h1 className="title">🌱 CropGuard</h1>
+          <p className="description">
+            Empowering agriculture with real-time monitoring using LoRa technology.
+          </p>
 
-        <div className="button-group">
-          <Link to="/about" className="btn btn-primary">Learn More</Link>
-          <Link to="/nodes" className="btn btn-outline">View Nodes</Link>
-        </div>
+          {/* 💡 Hero Image in foreground */}
+          {/*<img src={heroImage} alt="Smart Agriculture" className="hero-image" />*/}
 
-        <div className="features">
-          <div className="feature-item">
-            <FaBroadcastTower className="feature-icon" />
-            <span>Long-Range Connectivity</span>
+          <div className="button-group">
+            <Link to="/about" className="btn btn-primary">Learn More</Link>
+            <Link to="/nodes" className="btn btn-outline">View Nodes</Link>
           </div>
-          <div className="feature-item">
-            <FaShieldAlt className="feature-icon" />
-            <span>Damage Prevention</span>
-          </div>
-          <div className="feature-item">
-            <FaLeaf className="feature-icon" />
-            <span>Sustainable Agriculture</span>
+
+          <div className="features">
+            <div className="feature-card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnXPA0AwG8eHDc1DjyivgN04S-u_O15ypnlQ&s" alt="Connectivity" />
+              <span>Long-Range LoRa</span>
+            </div>
+            <div className="feature-card">
+              <img src="https://img.icons8.com/ios-filled/50/4CAF50/shield.png" alt="Protection" />
+              <span>Real-time Protection</span>
+            </div>
+            <div className="feature-card">
+              <img src="https://img.icons8.com/ios-filled/50/4CAF50/plant-under-sun.png" alt="Sustainability" />
+              <span>Sustainable Farming</span>
+            </div>
           </div>
         </div>
       </div>
