@@ -1,0 +1,56 @@
+/* components/Navbar.css */
+*{
+    margin: 0;
+}
+.navbar {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%; /* ✅ full width */
+  height: 100px;
+  background-color: #1e4620;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  color: #fff;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.brand-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #d4f5c6;
+  margin: 0;
+}
+
+.navbar-links {
+  list-style: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  font-size: 1.5rem;
+  gap: 50px;
+  margin: 0;
+  padding: 40px;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar-links .a {
+  color: #d4f5c6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links .a:hover {
+  color: #a1e888;
+}

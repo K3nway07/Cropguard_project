@@ -1,0 +1,92 @@
+/* Nodes.css - reversed colors with label-value pairs */
+.nodes-container {
+  background-color: #d4f5c6; /* light green background */
+  padding: 20px;
+  min-height: 100vh;
+
+  /* Center horizontally & vertically */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* justify-content: center; vertical center */
+  align-items: center;     /* horizontal center */
+
+  color: #1e4620; /* dark green text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center; /* center text inside */
+}
+
+
+.fetch-button {
+  background-color: #a1e888; /* medium light green */
+  border: none;
+  color: #1e4620; /* dark green text */
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.fetch-button:hover {
+  background-color: #86c670;
+}
+
+.nodes-data {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.node-card {
+  background-color: #ffffff; /* white box for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  box-sizing: border-box;
+  color: #1e4620;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(30, 70, 32, 0.3);
+}
+
+.node-card h3 {
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #1e4620;
+}
+
+.node-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.node-card ul li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between; /* label left, value right */
+  border-bottom: 1px solid #a1e888; /* subtle underline */
+  padding-bottom: 4px;
+  color: #1e4620;
+}
+
+.node-card ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timestamp {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4f774f; /* darker green */
+  text-align: center;
+}
