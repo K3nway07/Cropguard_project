@@ -22,7 +22,7 @@ const About = () => {
         
         <div className="component-card">
           <div className="component-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/NodeMCU_DEVKIT_1.0.jpg" alt="NodeMCU ESP8266" />
+            <img src="https://components101.com/sites/default/files/components/ESP8266-NodeMCU.jpg" alt="NodeMCU ESP8266" />
 
           </div>
           <div className="component-info">
