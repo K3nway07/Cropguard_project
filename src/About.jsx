@@ -11,7 +11,7 @@ const About = () => {
           farming efficiency and reduce manual intervention by leveraging IoT
           technologies. It uses a network of sensors and LoRa-based communication
           to continuously monitor environmental parameters like temperature,
-          humidity, and soil moisture across large crop areas. The collected data
+          humidity, and soil moisture across large crop areas. The nodes are also customisable and the sensor confurigations can be changed according to applications of the users. The collected data
           is displayed in real-time on a user-friendly dashboard, helping farmers
           make informed decisions and take timely action.
         </p>
