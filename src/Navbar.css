@@ -1,10 +1,12 @@
-/* components/Navbar.css */
-*{
-    margin: 0;
+/* Reset margin for all */
+* {
+  margin: 0;
 }
+
+/* Navbar container */
 .navbar {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 100%; /* ✅ full width */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%; /* full width */
   height: 100px;
   background-color: #065f46;
   display: flex;
@@ -18,6 +20,7 @@
   color: #fff;
 }
 
+/* Left part with brand */
 .navbar-left {
   display: flex;
   align-items: center;
@@ -30,6 +33,7 @@
   margin: 0;
 }
 
+/* Navbar links container */
 .navbar-links {
   list-style: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,10 +44,12 @@
   padding: 40px;
 }
 
+/* Each link */
 .navbar-links li {
   display: inline-block;
 }
 
+/* Link styling */
 .navbar-links .a {
   color: #fff;
   text-decoration: none;
@@ -53,4 +59,44 @@
 
 .navbar-links .a:hover {
   color: #a1e888;
+}
+
+/* -------- Responsive Styles -------- */
+
+/* On smaller screens (mobile/tablet) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 24px;
+    align-items: flex-start;
+  }
+
+  .navbar-left {
+    margin-bottom: 16px;
+  }
+
+  .brand-name {
+    font-size: 2rem;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    display: block;
+    width: 100%;
+  }
+
+  .navbar-links .a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 1.2rem;
+  }
 }
