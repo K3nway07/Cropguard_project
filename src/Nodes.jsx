@@ -70,7 +70,7 @@ function Nodes() {
                 <li>Ambient Temp: {data.field1} °C</li>
                 <li>Ambient Humidity: {data.field2} %</li>
                 <li>Soil Moisture: {data.field3} %</li>
-                <li>Location: MSIT, Ruby, Kolkata</li>
+                <li>Location: 150, Anandapur Rd, Nazirabad, Kolkata, Karimpur, West Bengal 700099</li>
               </ul>
               <p className="timestamp">{formatDate(data.created_at)}</p>
 
@@ -102,7 +102,7 @@ function Nodes() {
                 <li>Ambient Temp: {data.field4} °C</li>
                 <li>Ambient Humidity: {data.field5} %</li>
                 <li>Soil Moisture: {data.field6 ?? 'N/A'} %</li>
-                <li>Location: MSIT, Ruby, Kolkata</li>
+                <li>Location: 150, Anandapur Rd, Nazirabad, Kolkata, Karimpur, West Bengal 700099</li>
               </ul>
               <p className="timestamp">{formatDate(data.created_at)}</p>
 

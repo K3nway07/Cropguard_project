@@ -3,7 +3,8 @@ import TeamCard from './TeamCard.jsx'
 import pratyush from './Pratyush.jpg'
 import sagnic from './Sagnic.jpeg'
 import jit from './Jit.jpeg'
-import manir from './Manir.jpeg'
+import manir from './manir2.png'
+import mentor from './mentor.jpg'
 
 function Contact() {
   return (
@@ -13,7 +14,7 @@ function Contact() {
         <TeamCard
           name="Dr. Manash Chanda"
           designation="Mentor"
-          image={pratyush}
+          image={mentor}
         />
       </div>
 
